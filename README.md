@@ -1,10 +1,14 @@
 dataset source:: https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
 
 A Data Mining Approach to Predicting Hospital
-Readmission Rate of Diabetic Patients
+Readmission Rate of Diabetic Patients 
+
 Nayna Ann Moni · Rosmi · Adewale Arogbonlo
+
 May 29, 2022
+
 Abstract
+
 Data mining is used to find better patterns to make better decisions. The objective of this study
 is to assist hospitals to improve diabetic patient care and to reduce the number of times the
 patients are readmitted. A patient that is readmitted within a short time frame is considered
@@ -12,8 +16,11 @@ a readmission. Data mining techniques are used in this study to predict readmiss
 analysing a data set of patient admission history. Decision tree, Logistic regression and random
 forest were used to predict readmission. Random forest gave the best accuracy of 94% amongst
 the three models.
+
 Key words: Data mining, Hospital readmission, Diabetes readmission, Prediction
+
 1. Introduction
+   
 There are different types of diabetic patients regularly admitted into a hospital. Even though technology has advanced greatly over the years, diabetic patients still face the challenge of readmission. Diabetes is one of the most costly conditions to treat hence readmission is a huge drawback to both the individual and the hospital. The
 process of recognising patients who are likely to
 be readmitted within a short period of time is unpredictable with the naked eye. Without further
@@ -41,7 +48,9 @@ a patient, the decision is often biased and unreliable due to limited knowledge.
 approaches have been successfully applied in
 several fields to find hidden patterns from data
 sets. This could greatly assist with better decision making as it can produce evidence of treatment trends and their results.
+
 2. Data Description
+   
 To discover the relationship between patient history and readmission rates, We obtained a data
 set of diabetic patients from a public repository. The data set has 50 attributes and contains 101766 rows of patient encounters. The
 data set contains medical record of drugs prescribed, past diagnosis, tests performed on a patient and the dates of discharge and readmission.
@@ -87,7 +96,9 @@ were no changes, this is represented by
 which is used to determine if the patient was readmitted within 30 days, represented by ’<30, readmitted after 30 days,
 represented by ’>30’ and no record of
 readmission was represented with ’No’.
+
 3. Business scenario
+
 Hospital readmission is seen to be a good indicator of how well diabetes patients are being cared
 for. As a healthcare professional, you’d like to
 find associative and/or correlative patterns in diabetes patients’ medical histories that will help
@@ -102,7 +113,9 @@ from a lower sample size than this study. The
 findings were based on demographic and socioeconomic characteristics that determine readmission rates integrated in some cases [2]. In certain
 circumstances, the models have no specified aim
 and instead focus on all-cause readmission.
+
 4. preprocessing and data mining
+
 approaches used
 Data preprocessing is the first step in data mining. It is used to prepare raw data for further analysis. Unprocessed data contains a lot of missing
 values and unnecessary information, it may be
@@ -111,8 +124,9 @@ of data preprocessing; data cleaning, data integration, data transformation, dat
 and data reduction. The steps taken to clean the
 selected dataset are described in the following
 subsections.
-2
+
 4.1. Data Cleaning
+
 Missing values have a significant impact on the
 findings, and there are numerous strategies for
 resolving this issue. In general, if the number of
@@ -174,8 +188,9 @@ baby, and extramural birth were categorised as emergency.
 • Normal delivery, born inside this hospital,
 and born outside this hospital were also
 mapped as one category.
-3
+
 4.3. Data Reduction
+
 Data reduction condenses data into a smaller dimension while still keeping the integrity of the
 original data [4]. The attributes citoglipton and
 examide had the same value for every patient so
@@ -183,7 +198,9 @@ these columns were dropped as they cannot provide any variation to the data or c
 useful information. We also dropped those who
 were categorised as ’expired’ as readmission will
 not occur for these patients.
+
 4.4. Variable encoding and Categorization
+
 • The "medication change" characteristic
 was encoded as 0 and 1 instead of "No"
 (no change) and "Ch" (changed).
@@ -196,7 +213,9 @@ down variables were classified as 1.
 days and no readmission into a single category to limit our challenge to a binary classification. In the readmitted attribute, 0
 was used to replace the values >30 and 0.
 whereas 1 was used to replace the readmission within 30 days (<30).
+
 4.5. Grouping variables
+
 We decided to group the values of several attributes in order to make the classification process easier.
 • We chose to replace the A1Cresult attribute values >7 and >8, as well as the
 max_glu_serum attribute values >200 and
@@ -218,7 +237,9 @@ range to which they belong.The values in
 the diag_1, diag_2, and diag_3 characteristics that contain V and E were coded
 as 0. The attributes diag_1, diag_2, and
 diag_3 were classified into nine groups.
+
 4.6. Duplicate Data
+
 • Some of the patients in the database had
 many encounters. Then, as possible representations of numerous encounters, we
 looked at the first encounter and the last
@@ -227,7 +248,9 @@ because last encounters provided severely
 skewed data for readmissions. The first entry was picked because it has the largest
 chance of being readmitted, which aids in
 data balancing.
+
 5. Patterns and Findings
+
 We did data visualization to identify hidden patterns in our data.
 In previous sections readmitted is defined as
 the patient being readmitted within 30 days of
@@ -238,7 +261,6 @@ days, we decided to categorise ’No’ and ’>30’
 into one class. We decided to classify No readmission within 30 days as ’0’ and readmission
 within 30 days as ’1’. The pie chart in figure 1
 below shows that 11.29% of the patients were
-4
 readmitted within 30 days. As we can observe
 from the representation of our target variable’s
 distribution, it is significantly asymmetrical, our
@@ -260,7 +282,7 @@ Figure 3: A1Cresult vs readmission
 The number of lab procedures appeared to
 be similar for both readmitted and non readmitted patients so it does not create any bias in the
 mining. In figure 5 blue indicates the readmission frequency and green represents non readmission.
-5
+
 Figure 4: Lab procedure vs readmission
 We then further analysed the effects of
 changing medication and the prescription of diabetes medication to the readmission rates. As
@@ -268,7 +290,9 @@ it can be observed in figure 5 readmission rate
 is higher for those patients who were prescribed
 diabetic medication.
 Figure 5: Diabetes medication vs readmission
+
 6. discussions and comparison
+
 Once data preprocessing was completed, we
 employed data mining techniques such as Logistic Regression, Decision Tree, and Random Forest to estimate the number of readmitted patients
 and compare which model performed better. Our
@@ -314,7 +338,7 @@ Table 2: Results of Decision Tree
 Because decision trees outperformed logistic regression, we can conclude that tree-based
 models will perform better for our problem.
 Random forest -Random forest is an ensemble learning approach that combines multiple weak models into a single powerful
-6
+
 model.Because random forest learns from numerous trees, it performs well on very large volumes of data with high dimensionality. Therefore
 we used the random forest method on our data
 set and obtained the results shown in Table 3.
@@ -324,7 +348,9 @@ Table 3: Results of Random forest
 Among all of the models we tested, Random
 Forest fared the best, proving that our premise
 regarding tree-based models was right.
+
 7. Conclusion & Possible Future Works
+
 In this paper, we discussed the importance of reducing the risk of readmission to hospitals within
 thirty days of the initial discharge. This could
 benefit both the hospital and patient in terms of
@@ -347,7 +373,9 @@ can be trained to give better results. The current
 model only predicts readmission for diabetes patients. We could also tweak the current model
 to be able to make predictions for any disease in
 the future.
+
 References
+
 [1] C. J. Clark, A. Coe, N. F. Fino, and
 R. Pawa, “Endoscopic retrograde cholangiopancreatography in octogenarians: a
 population-based study using the nationwide
